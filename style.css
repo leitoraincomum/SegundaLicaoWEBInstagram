@@ -1,0 +1,189 @@
+/*
+Resetando configurações e determinando padrões
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+/*
+Estilizando o corpo do site
+*/
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(243, 243, 243);
+    margin: 0;
+    padding: 0;
+		/* Flex conteiner pai para tornar a aparência responsiva https://www.w3schools.com/css/css3_flexbox.asp*/
+    display: flex;
+    justify-content: center;
+}
+
+
+.instagram-wrapper {
+    display: flex;
+		/*alinhamento vertical*/
+    align-items: center;
+		/*alinhamento horizontal*/
+    justify-content: start;
+    width: 60%;
+    height: 100vh;
+}
+
+/* customizar a imagem do conteiner do telefone */
+.instagram-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.instagram-phone img {
+    height: 50rem;
+}
+
+.instagram-continue {
+    display: flex;
+    align-items: center; /* horizontal */
+    justify-content: space-around; /* vertical */
+    flex-direction: column; /*determinar que ficarão em coluna*/
+    width: 50%;
+    min-height: 34rem;
+}
+
+.group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 100%;
+		/*preenchimento da caixa*/
+    padding: 1.3rem 0;
+    border: 1px solid lightgray;
+}
+
+.group:nth-child(1) {
+	/*customizando o tamanho do primeiro filho do elemento dvi, no caso onde vai a foto*/
+    min-height: 19rem;
+}
+
+/*customizando o tamanho do logo do instagram*/
+.instagram-logo {
+    height: 3rem;
+}
+
+/*customizando a foto de perfil*/
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+		/*escondendo as pontas quadradas da imagem*/
+    overflow: hidden;
+}
+
+/*customizando o tamanho da foto de perfil*/
+.profile-photo img {
+    height: 6rem;
+}
+
+/*customizando o botão de login*/
+.instagram-login {
+    background-color: #0095f6;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+/*customizando o link de logout do instagram*/
+.instagram-logout {
+    color: #0095f6;
+    margin-top: 1rem;
+}
+
+/*não é o usuário logado?*/
+.not-account {
+    color: rgb(160, 160, 160);
+}
+
+/*links de alterar conta ou criar conta*/
+.link-blue {
+    color: #0095f6;
+}
+
+/*customizando os botões de download do app*/
+.get-the-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1.3rem 0;
+}
+
+.download {
+    display: flex;
+    width: 100%;
+		/*deixa os elementos no centro da div*/
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+}
+
+.app-download {
+    height: 3rem;
+    width: 10rem;
+    background-size: cover;
+}
+
+/*botão apple store*/
+.app-download:nth-child(1) {
+    background-image: url('imagens/apple-button.png');
+}
+
+/*botão google play*/
+.app-download:nth-child(2) {
+    background-image: url('imagens/googleplay-button.png');
+}
+
+
+/* media queries */
+
+/*tratando a responsabilidade de quando a tela estiver até 1024px*/
+@media (max-width: 1024px) {
+    .instagram-wrapper {
+        width: 90%;
+    }
+}
+
+/*tratando a responsabilidade de quando a tela estiver até 650px, não vai exibir a foto do telefone*/
+@media (max-width: 650px) {
+    body {
+        background-color: #ffffff;
+    }
+
+    .instagram-wrapper {
+        width: 90%;
+    }
+
+		/*não exibe imagem do telefone*/
+    .instagram-phone {
+        display: none;
+    }
+
+    .instagram-continue {
+        width: 100%;
+    }
+    
+		/*borda do grupo fica transparente*/
+    .group {
+        border: 1px solid transparent;
+    }
+}
